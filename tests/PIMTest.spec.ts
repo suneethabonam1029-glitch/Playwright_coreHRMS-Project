@@ -16,7 +16,7 @@ const pimPage: PIMPage = new PIMPage();
 test("Verify that an employee can be added successfully", async (page) => {
 
     // call the Login page
- console.log("login with web app");
+
 
     await loginPage.login();
 
