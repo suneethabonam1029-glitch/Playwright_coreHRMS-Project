@@ -26,27 +26,7 @@ export class CommonUtils {
    
  
 
-/*
-static async readJsonFile(): Promise<void> {
 
-    try {
-
-      const username: string = this.configData.username;//selenium
-
-      const password: string = this.configData.password;//selenium
-
-      const browser: string = this.configData.browser;//firefox
-
-      const url: string = this.configData.url;//http://127.0.0.1/orangehrm-2.5.0.2/login.php
-
-      console.log("Config loaded successfully");
-
-    } catch (error: any) {
-      
-        AssertUtil.assertFalse(error.message);
-    }
-  }
-*/
   //=============================
   // Browser Setup
   //=============================
@@ -148,18 +128,6 @@ static async getElementTextInFrame(pimFrame: FrameLocator,selector:string):Promi
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 public static async clilkElement(selector:string):Promise<void>
 {
   
@@ -234,7 +202,7 @@ public static async isElementChecked(frame: FrameLocator,selector: string): Prom
   }
 
 
- return element;//await locator.isChecked() -true
+ return element;
 }
 
 
@@ -276,13 +244,6 @@ static  switchToFrameUsingIdOrName(selector: string): FrameLocator {
 
   }
 
-  static async switchToParentWindow(parentPage: Page): Promise<Page> {
-
-    await parentPage.bringToFront();
-
-    return parentPage;
-
-  }
 
 
 
@@ -325,25 +286,6 @@ static  switchToFrameUsingIdOrName(selector: string): FrameLocator {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public static async selectDropDownValue(frame: FrameLocator,selector: string,option: string): Promise<void> {
     
      try {
@@ -382,16 +324,6 @@ public static async verifySelectedValue(
     }
 }
 
-public static async printAllDropdownValues(locator: Locator): Promise<void> {
-
-    const options = await locator.locator('option').allTextContents();
-
-    console.log(`Total options in dropdown : ${options.length}`);
-
-    for (const option of options) {
-        console.log(option.trim());
-    }
-}
 
 public static async uploadFile(locator: Locator, filePath: string): Promise<void> {
     await locator.setInputFiles(filePath);
@@ -400,23 +332,7 @@ public static async uploadFile(locator: Locator, filePath: string): Promise<void
 
 
 
-public static async selectDateFromCalendar(
-    dateElements: Locator,
-    dateValue: string
-): Promise<void> {
 
-    const dates = await dateElements.all();
-
-    for (const date of dates) {
-
-        const text = (await date.innerText()).trim();
-
-        if (text === dateValue) {
-            await date.click();
-            break;
-        }
-    }
-}
 
 public static async verifyElementSelected(
     locator: Locator,
@@ -430,40 +346,7 @@ public static async verifyElementSelected(
     }
 }
 
-public static async verifyMultipleSelection(
-    elements: Locator,
-    elementType: string
-): Promise<void> {
 
-    const allElements = await elements.all();
-
-    console.log(`Total ${elementType}s : ${allElements.length}`);
-
-    for (let i = 0; i < allElements.length; i++) {
-
-        await allElements[i].check();
-
-        if (await allElements[i].isChecked()) {
-            console.log(`${elementType} ${i + 1} selected successfully`);
-        } else {
-            console.log(`${elementType} ${i + 1} not selected`);
-        }
-    }
-}
-
-public static async verifyTooltipText(
-    locator: Locator,
-    expectedTooltip: string
-): Promise<void> {
-
-    const actualTooltip = (await locator.getAttribute('title'))?.trim();
-
-    if (actualTooltip === expectedTooltip) {
-        console.log(`PASS : Tooltip text verified → ${actualTooltip}`);
-    } else {
-        console.log(`FAIL : Expected → ${expectedTooltip} | Found → ${actualTooltip}`);
-    }
-}
 
 public static async doubleClickElement(locator: Locator): Promise<void> {
     await locator.dblclick();
@@ -473,40 +356,7 @@ public static async rightClickElement(locator: Locator): Promise<void> {
     await locator.click({ button: 'right' });
 }
 
-public static async clickElementUsingJS(locator: Locator): Promise<void> {
-    await locator.evaluate((element: HTMLElement) => element.click());
-}
 
-public static async enterValueUsingJS(
-    locator: Locator,
-    value: string
-): Promise<void> {
-    await locator.evaluate(
-        (element: HTMLInputElement, val) => {
-            element.value = val;
-        },
-        value
-    );
-}
-
-public static async scrollByPixel(
-    page: Page,
-    x: number,
-    y: number
-): Promise<void> {
-    await page.evaluate(
-        ([scrollX, scrollY]) => window.scrollBy(scrollX, scrollY),
-        [x, y]
-    );
-}
-
-public static async scrollToTop(page: Page): Promise<void> {
-    await page.evaluate(() => window.scrollTo(0, 0));
-}
-
-public static async scrollToBottom(page: Page): Promise<void> {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-}
 
 public static async acceptAlert(page: Page): Promise<void> {
     page.once('dialog', async dialog => {
@@ -582,7 +432,7 @@ public static async getElementText(selector: string): Promise<string> {
         AssertUtil.assertFalse(error.message);
     }
 
-    return text;//Welcome selenium
+    return text;//Welcome Suneetha
 }
 
 
@@ -606,31 +456,6 @@ public static async getEmpElementText(pimFrame: FrameLocator,selector:string):Pr
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public static async getElementAttributeValue(
-    locator: Locator,
-    attributeName: string
-): Promise<string | null> {
-    return await locator.getAttribute(attributeName);
-}
-
-
-
 public static async goBack(page: Page): Promise<void> {
     await page.goBack();
 }
@@ -639,18 +464,7 @@ public static async moveForward(page: Page): Promise<void> {
     await page.goForward();
 }
 
-public static async captureScreenshot(
-    page: Page,
-    username: string,
-    screenshotFolder: string
-): Promise<void> {
 
-    const fileName = `${username}_${Date.now()}.png`;
-
-    await page.screenshot({
-        path: `${screenshotFolder}/${fileName}`
-    });
-}
 
 public static async isElementDisplayed(locator: Locator): Promise<boolean> {
     return await locator.isVisible();
@@ -733,46 +547,6 @@ public static async pressArrowRightKey(page: Page): Promise<void> {
 public static async pressShiftArrowDownKey(page: Page): Promise<void> {
     await page.keyboard.press('Shift+ArrowDown');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

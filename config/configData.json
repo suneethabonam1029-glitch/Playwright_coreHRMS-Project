@@ -1,11 +1,11 @@
 {
   "browser": "firefox",
   "url": "http://127.0.0.1/orangehrm-2.5.0.2/login.php",
-  "username":"selenium",
-  "password":"selenium",
-  "firstname": "Hanu",
-  "lastname" : "DSu",
+  "username":"Suneetha",
+  "password":"Janvika@2018",
+  "firstname": "Sri",
+  "lastname" : "G",
   "dropdownoption": "Emp. First Name",
-  "SearchFor": "Akkii"
+  "SearchFor": "Sri"
   
 }

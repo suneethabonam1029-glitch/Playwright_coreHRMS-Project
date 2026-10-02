@@ -21,7 +21,7 @@ test("Verify that an employee can be added successfully", async (page) => {
 
     await loginPage.login();
 
-  await  AssertUtil.assertEquals(await CommonUtils.getElementText(loginPage.getWelcomePage()), "Welcome selenium");
+  await  AssertUtil.assertEquals(await CommonUtils.getElementText(loginPage.getWelcomePage()), "Welcome Suneetha");
 
    await CommonUtils.moveToElement(pimPage.getPim());
 
@@ -60,7 +60,7 @@ await CommonUtils.enterValueInFrame(pimFrame,pimPage.getSearchFor(), configData.
 await CommonUtils.clickElementInFrame(pimFrame, pimPage.getSearchButton());
 
 
-await AssertUtil.assertEquals(await CommonUtils.getElementTextInFrame(pimFrame,pimPage.getEmployeeName()),"Hanu DSU")
+await AssertUtil.assertEquals(await CommonUtils.getElementTextInFrame(pimFrame,pimPage.getEmployeeName()),"Sri G")
 
 
 

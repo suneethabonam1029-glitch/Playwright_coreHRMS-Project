@@ -34,7 +34,8 @@ Given("log in to the application", async function () {
 
 
 // Verify Welcome Message
-Then("verify Welcome selenium", async  () => {
+Then("verify Welcome Suneetha", async  () => {
+   // Then("verify Welcome selenium", async  () => {
 
     const welcomeText = await CommonUtils.getElementText(
         loginPage.getWelcomePage()
@@ -42,7 +43,7 @@ Then("verify Welcome selenium", async  () => {
 
     await AssertUtil.assertEquals(
         welcomeText,
-        "Welcome selenium"
+        "Welcome Suneetha"
     );
 
 });
@@ -187,7 +188,7 @@ When(
         await CommonUtils.enterValueInFrame(
             pimFrame,
             pimPage.getSearchFor(),
-            "Hanu"
+            "Sri"
         );
 
     }

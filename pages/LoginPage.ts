@@ -9,7 +9,7 @@ export class LoginPage {
     private by_username = "input[name='txtUserName']";
     private by_password = "input[name='txtPassword']";
     private by_signIn = "input[name='Submit']";
-    private by_welcomePage = "xpath=//li[text()='Welcome selenium']";
+    private by_welcomePage = "xpath=//li[text()='Welcome Suneetha']";
     private by_logout = "xpath=//a[text()='Logout']";
   
 

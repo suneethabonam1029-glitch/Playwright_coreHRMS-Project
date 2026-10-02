@@ -18,7 +18,8 @@ private by_pim_addemp = "xpath=//li[text()='PIM : Add Employee']";
   private by_searchByDropdown = "xpath=//select[@id='loc_code']";
   private by_searchFor = "xpath=//input[@id='loc_name']";
   private by_searchButton = "xpath=//*[@id='standardView']/div[2]/input[2]";
-  private by_employeeName = "xpath=//a[contains(text(),'Hanu')]";
+  private by_employeeName = "xpath=//a[contains(text(),'Sri')]";
+
 
   getPim(): string {
      return this.by_pim;//"xpath=//li[@id='pim']"
