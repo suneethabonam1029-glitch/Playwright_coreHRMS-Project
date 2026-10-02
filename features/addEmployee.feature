@@ -1,6 +1,7 @@
 Feature: PIM Page functionality
 
   Scenario: Verify Add Employee functionality
+  //test
 
     Given log in to the application
     Then verify Welcome Suneetha
