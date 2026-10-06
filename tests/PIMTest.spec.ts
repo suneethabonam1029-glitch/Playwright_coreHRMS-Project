@@ -66,6 +66,62 @@ await AssertUtil.assertEquals(await CommonUtils.getElementTextInFrame(pimFrame,p
 
 });
 
+
+
+
+test("Verify that an employee can be delete successfully", async (page) => {
+
+    // call the Login page
+ console.log("delete emp");
+
+
+    await loginPage.login();
+
+  await  AssertUtil.assertEquals(await CommonUtils.getElementText(loginPage.getWelcomePage()), "Welcome Suneetha");
+
+   await CommonUtils.moveToElement(pimPage.getPim());
+
+    await CommonUtils.clilkElement(pimPage.getAddEmp());
+
+
+ let pimFrame: FrameLocator = await CommonUtils.switchToFrameUsingIdOrName(pimPage.getFrame());//await this.page.frameLocator(selector)
+
+
+
+
+await CommonUtils.enterValueInFrame(pimFrame,pimPage.getFirstName(), configData.firstname);
+
+await CommonUtils.enterValueInFrame(pimFrame,pimPage.getLastName(), configData.lastname);
+
+    await CommonUtils.clickElementInFrame(pimFrame, pimPage.getSave());
+
+    await CommonUtils.clickElementInFrame(pimFrame, pimPage.getEdit());
+
+    await AssertUtil.assertTrue(await CommonUtils.isElementChecked(pimFrame, pimPage.getChkSmoker()));
+
+console.log("checked");
+
+await CommonUtils.hardWait(3);
+   await CommonUtils.clickElementInFrame(pimFrame, pimPage.getEdit());
+
+
+await CommonUtils.clickElementInFrame(pimFrame, pimPage.getBackButton());
+
+
+await CommonUtils.selectDropDownValue(pimFrame,pimPage.getSearchByDropdown(),configData.dropdownoption);
+
+
+await CommonUtils.enterValueInFrame(pimFrame,pimPage.getSearchFor(), configData.firstname);
+
+await CommonUtils.clickElementInFrame(pimFrame, pimPage.getSearchButton());
+
+
+await AssertUtil.assertEquals(await CommonUtils.getElementTextInFrame(pimFrame,pimPage.getEmployeeName()),"Sri G")
+
+
+
+});
+
   /*
 
     test("Verify that the search functionality returns the correct employee", async () => {
