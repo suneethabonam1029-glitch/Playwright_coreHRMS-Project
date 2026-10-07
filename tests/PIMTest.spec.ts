@@ -73,7 +73,7 @@ test("Verify that an employee can be delete successfully", async (page) => {
 
     // call the Login page.
  //console.log("delete emp");
-  console.log("delete employee");
+  console.log("delete employee"); 
 
 
     await loginPage.login();
