@@ -5,6 +5,8 @@ export class AssertUtil {
 
 static assertEquals(actual:string,expected:string):void
 {
+  actual = (actual ?? '').replace(/\s+/g, ' ').trim();
+    expected = (expected ?? '').replace(/\s+/g, ' ').trim();
     if(actual === expected)
     {
            console.log("Expected: " + expected + " is matched with Actual: " + actual);
