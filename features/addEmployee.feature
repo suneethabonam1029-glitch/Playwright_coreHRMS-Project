@@ -10,13 +10,8 @@ Feature: PIM Page functionality
     And click on the Add Employee button
     And switch to the iframe
 
-<<<<<<< HEAD
-    And enter the first name "Sri" into the first name field
+    And entegit add .r the first name "Sri" into the first name field
     And enter the last name "G" into the last name field
-=======
-    And enter the first name "Suneetha" into the first name field
-    And enter the last name "Bonam" into the last name field
->>>>>>> add_emp
     And click the Save button to add the new employee
 
     And click the Edit button
