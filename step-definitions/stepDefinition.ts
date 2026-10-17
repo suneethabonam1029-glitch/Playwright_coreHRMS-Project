@@ -15,10 +15,6 @@ import {setDefaultTimeout} from "@cucumber/cucumber";
 setDefaultTimeout(30000);
 
 
-
-
-
-
 const loginPage = new LoginPage();
 const pimPage = new PIMPage();
 
