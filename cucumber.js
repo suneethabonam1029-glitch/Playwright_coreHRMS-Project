@@ -5,7 +5,14 @@ module.exports = {
         require: ["step-definitions/**/*.ts"],
         format: [
             "progress",
-            "html:reports/cucumber-report.html"
-        ]
+            "html:reports/cucumber-report.html",
+            "allure-cucumber.js/reporter"
+        ],
+
+       formatOptions: {
+       resultsDir :"allure-results" 
+        }
+
     }
+
 };
